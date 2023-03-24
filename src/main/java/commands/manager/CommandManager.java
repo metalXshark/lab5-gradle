@@ -16,7 +16,7 @@ public class CommandManager {
             Command command = commandMap.get(commandName[0]);
             switch (commandName[0]){
                 case "update", "remove_by_id", "execute_script":
-                    if (commandName.length == 2) {
+                    if (commandName.length < 3) {
                         command.execute(commandName);
                         System.out.println("Команда успешно выполнена!");
                     } else {

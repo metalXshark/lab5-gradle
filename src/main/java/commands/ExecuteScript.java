@@ -5,6 +5,7 @@ import commands.manager.CommandManager;
 import console.ConsolePrinter;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -12,7 +13,7 @@ public class ExecuteScript extends Command {
     CommandManager commandManager = new CommandManager();
     ConsolePrinter consolePrinter = new ConsolePrinter();
     @Override
-    protected void execute(String[] commandName) {
+    protected void execute(String[] commandName)  {
         try (BufferedReader reader = new BufferedReader(new FileReader(commandName[1]))) {
             String line;
             while ((line = reader.readLine()) != null) {
