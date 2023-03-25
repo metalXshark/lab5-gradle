@@ -32,7 +32,7 @@ public class CommandManager {
                     }
             }
         } catch (IllegalStateException | NullPointerException ex) {
-            System.out.println("Не существует команды \"" + commandName[0] + "\"\nДля справки используйте – help");
+            System.out.println("Не существует команды \"" + commandName[0] + "\"\nДля справки используйте - help");
         }
     }
     public static ArrayList<String> getCommandHistory(){

@@ -86,18 +86,22 @@ public class CollectionManager implements ICollectionManager {
             consolePrinter.print("Коллекция пуста.");
         }
     }
-    public void min_by_color(){
+    int k = 0;
+    public int min_by_color(){
         if (checkColor()){
             Iterator<Dragon> i = collection.iterator();
             while (i.hasNext()) {
                 Dragon dragon = i.next();
                 if (dragon.getColor().equals(color.get(0))) {
                     getInfo(dragon);
+                    k += 1;
                 }
             }
+            return k;
         } else {
             consolePrinter.print("Объекта с цветом " + color.get(0) + " не существует");
         }
+        return 0;
     }
     public Set<String> group_counting_by_name(){
         for (Dragon dragon : getLinkedList()) {

@@ -13,7 +13,7 @@ public interface ICollectionManager {
     void print_field_ascending_killer();
     void remove_first();
     void remove_head();
-    void min_by_color();
+    int min_by_color();
     Set<String> group_counting_by_name();
     void remove_by_id(String ID);
 }

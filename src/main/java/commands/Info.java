@@ -10,6 +10,6 @@ public class Info extends Command {
 
     @Override
     protected void execute(String[] commandName) {
-        consolePrinter.print("Тип коллекции – " + collectionManager.getLinkedList().getClass().getName() + "\nДата инициализации коллекции – " + collectionManager.getCreationDate() + "\nКоличество элементов в коллекции – " + collectionManager.getLinkedList().size());
+        consolePrinter.print("Тип коллекции - " + collectionManager.getLinkedList().getClass().getName() + "\nДата инициализации коллекции - " + collectionManager.getCreationDate() + "\nКоличество элементов в коллекции - " + collectionManager.getLinkedList().size());
     }
 }

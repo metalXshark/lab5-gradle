@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
 tasks.getByName<Test>("test") {
