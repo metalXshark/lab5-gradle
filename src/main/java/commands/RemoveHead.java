@@ -4,9 +4,13 @@ import collection.CollectionManager;
 import commands.manager.Command;
 
 public class RemoveHead extends Command {
-    CollectionManager collectionManager = new CollectionManager();
     @Override
     protected void execute(String[] commandName) {
-        collectionManager.remove_head();
+        try{
+            collectionManager.remove_head();
+            successResult();
+        } catch (Exception e){
+            errorResult(commandName[0], e);
+        }
     }
 }

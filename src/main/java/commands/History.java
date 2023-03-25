@@ -5,7 +5,6 @@ import commands.manager.CommandManager;
 import console.ConsolePrinter;
 
 public class History extends Command {
-    ConsolePrinter consolePrinter = new ConsolePrinter();
     @Override
     protected void execute(String[] commandName) {
         consolePrinter.print("Последние вызванные команды: ");
@@ -13,8 +12,9 @@ public class History extends Command {
             for (int i = 0; i < 14; i++) {
                 consolePrinter.print(CommandManager.getCommandHistory().get(i));
             }
-        } catch (IndexOutOfBoundsException e) {
-            consolePrinter.print("За время работы было вызвано менее 14 команд");
+            successResult();
+        } catch (Exception e) {
+            errorResult(commandName[0], e);
         }
     }
 }

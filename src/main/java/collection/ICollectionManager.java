@@ -15,5 +15,5 @@ public interface ICollectionManager {
     void remove_head();
     int min_by_color();
     Set<String> group_counting_by_name();
-    void remove_by_id(String ID);
+    void remove_by_id(Long ID);
 }

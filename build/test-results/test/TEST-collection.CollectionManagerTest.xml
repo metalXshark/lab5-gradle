@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="collection.CollectionManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-25T06:49:31" hostname="DESKTOP-FJ9J1SF" time="0.025">
+  <properties/>
+  <testcase name="group_counting_by_name()" classname="collection.CollectionManagerTest" time="0.025"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

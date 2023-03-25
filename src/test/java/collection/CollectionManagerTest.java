@@ -24,21 +24,6 @@ class CollectionManagerTest {
     }
 
     @org.junit.jupiter.api.Test
-    void checkID() {
-        CollectionManager collectionManager = new CollectionManager();
-        start();
-        String ID = "7694290539024656580";
-        String ID1 = "984327077597855196";
-        String ID2 = "3406456834465878423";
-        Long dragonID = Long.parseLong(ID);
-        Long dragonID1 = Long.parseLong(ID1);
-        Long dragonID2 = Long.parseLong(ID2);
-        assertTrue(collectionManager.checkID(dragonID));
-        assertTrue(collectionManager.checkID(dragonID1));
-        assertFalse(collectionManager.checkID(dragonID2));
-    }
-
-    @org.junit.jupiter.api.Test
     void add() {
         Coordinates coordinates = new Coordinates(12,12);
         Person killer = new Person("test", 12, 12, "12", Color.BLUE);
@@ -107,7 +92,8 @@ class CollectionManagerTest {
         CollectionManager collectionManager = new CollectionManager();
         start();
         String x = String.valueOf(collectionManager.getLinkedList().getFirst());
-        collectionManager.remove_by_id("7694290539024656580");
+        Long ID = Long.parseLong("7694290539024656580");
+        collectionManager.remove_by_id(ID);
         String y = String.valueOf(collectionManager.getLinkedList().getFirst());
         assertNotEquals(x, y);
     }

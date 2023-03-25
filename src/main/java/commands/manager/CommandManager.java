@@ -18,7 +18,6 @@ public class CommandManager {
                 case "update", "remove_by_id", "execute_script":
                     if (commandName.length < 3) {
                         command.execute(commandName);
-                        System.out.println("Команда успешно выполнена!");
                     } else {
                         System.out.println("Некорректное количество аргументов. Для справки напишите help.");
                     }
@@ -26,7 +25,6 @@ public class CommandManager {
                 default:
                     if (commandName.length < 2) {
                         command.execute(commandName);
-                        System.out.println("Команда успешно выполнена!");
                     } else {
                         System.out.println("Некорректное количество аргументов. Для справки напишите help.");
                     }

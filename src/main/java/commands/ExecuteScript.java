@@ -10,8 +10,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ExecuteScript extends Command {
-    CommandManager commandManager = new CommandManager();
-    ConsolePrinter consolePrinter = new ConsolePrinter();
     @Override
     protected void execute(String[] commandName)  {
         try (BufferedReader reader = new BufferedReader(new FileReader(commandName[1]))) {

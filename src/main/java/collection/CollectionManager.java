@@ -15,7 +15,7 @@ public class CollectionManager implements ICollectionManager {
     private static LinkedList<Dragon> collection;
     private static ZonedDateTime creationDate;
     private static final ArrayList<Color> color = new ArrayList<>(List.of(Color.values()));
-    private static final Set<String> group_names = new HashSet<>();
+    private static final Set<String> groupNames = new HashSet<>();
     ConsolePrinter consolePrinter = new ConsolePrinter();
 
     public void createCollection() {
@@ -31,22 +31,7 @@ public class CollectionManager implements ICollectionManager {
     public void addJsonObject(Dragon dragon) {
         collection.add(dragon);
     }
-    public boolean checkID(Long ID) {
-        for (Dragon dragon : getLinkedList()) {
-            if(dragon.getId().equals(ID)){
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean checkColor() {
-        for (Dragon dragon : getLinkedList()) {
-            if(dragon.getColor().equals(color.get(0))){
-                return true;
-            }
-        }
-        return false;
-    }
+
 
 
 
@@ -72,34 +57,21 @@ public class CollectionManager implements ICollectionManager {
         }
     }
     public void remove_first(){
-        if (collection.size() > 0) {
-            collection.remove(collection.getFirst());
-        } else {
-            consolePrinter.print("Коллекция пуста.");
-        }
+        collection.remove(collection.getFirst());
     }
     public void remove_head(){
-        if (collection.size() > 0) {
-            getInfo(collection.getFirst());
-            collection.remove(collection.getFirst());
-        } else {
-            consolePrinter.print("Коллекция пуста.");
-        }
+        getInfo(collection.getFirst());
+        collection.remove(collection.getFirst());
     }
     int k = 0;
     public int min_by_color(){
-        if (checkColor()){
-            Iterator<Dragon> i = collection.iterator();
-            while (i.hasNext()) {
-                Dragon dragon = i.next();
-                if (dragon.getColor().equals(color.get(0))) {
-                    getInfo(dragon);
-                    k += 1;
-                }
+        Iterator<Dragon> i = collection.iterator();
+        while (i.hasNext()) {
+            Dragon dragon = i.next();
+            if (dragon.getColor().equals(color.get(0))) {
+                getInfo(dragon);
+                k += 1;
             }
-            return k;
-        } else {
-            consolePrinter.print("Объекта с цветом " + color.get(0) + " не существует");
         }
         return 0;
     }
@@ -115,27 +87,17 @@ public class CollectionManager implements ICollectionManager {
                 }
             }
             String f = name + ": " + k;
-            group_names.add(f);
+            groupNames.add(f);
         }
-        return group_names;
+        return groupNames;
     }
-    public void remove_by_id(String ID) {
-        Long dragonID;
-        try {
-            dragonID = Long.parseLong(ID);
-            if (checkID(dragonID)) {
-                Iterator<Dragon> i = collection.iterator();
-                while (i.hasNext()) {
-                    Dragon dragon = i.next();
-                    if (dragon.getId().equals(dragonID)) {
-                        i.remove();
-                    }
-                }
-            } else {
-                consolePrinter.print("Элемента с таким ID нет в коллекции.");
+    public void remove_by_id(Long ID) {
+        Iterator<Dragon> i = collection.iterator();
+        while (i.hasNext()) {
+            Dragon dragon = i.next();
+            if (dragon.getId().equals(ID)) {
+                i.remove();
             }
-        } catch (NumberFormatException e) {
-            consolePrinter.print("Команда не выполнена. Вы ввели некорректный аргумент.");
         }
     }
 }

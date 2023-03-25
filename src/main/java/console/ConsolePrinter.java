@@ -1,6 +1,8 @@
 package console;
 
-public class ConsolePrinter {
+import commands.manager.CommandResult;
+
+public class ConsolePrinter implements IConsolePrinter{
     public void print(String e){
         System.out.println(e);
     }
