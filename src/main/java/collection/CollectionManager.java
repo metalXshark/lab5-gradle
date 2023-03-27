@@ -16,7 +16,6 @@ public class CollectionManager implements ICollectionManager {
     private static ZonedDateTime creationDate;
     private static final ArrayList<Color> color = new ArrayList<>(List.of(Color.values()));
     private static final Set<String> groupNames = new HashSet<>();
-    ConsolePrinter consolePrinter = new ConsolePrinter();
 
     public void createCollection() {
         collection = new LinkedList<>();
